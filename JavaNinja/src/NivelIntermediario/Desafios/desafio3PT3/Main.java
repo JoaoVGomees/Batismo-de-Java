@@ -17,6 +17,7 @@ public class Main {
             System.out.println("4. Sair");
             System.out.println("Digite sua opção: ");
             opcao = xaxa.nextInt();
+            xaxa.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -52,6 +53,7 @@ public class Main {
                     }
                     break;
                 case 3:
+                    atualizarNinja(xaxa, ninjas);
                     break;
                 case 4:
                     System.out.println("Finalizando programa...");
@@ -106,7 +108,106 @@ public class Main {
         return ninjasTemp;
     }
 
-    public static atualizarNinja() {
+    public static Ninja[] atualizarNinja(Scanner xaxa, Ninja[] ninjas) {
+        boolean ninjaEncontrado = false;
 
+        System.out.println("Digite o nome do ninja a ser atualizado: ");
+        String nomeNinja = xaxa.nextLine();
+
+        System.out.println("==== Atualizar Ninja ====");
+        System.out.println("1. Editar Nome.");
+        System.out.println("2. Editar Idade.");
+        System.out.println("3. Editar Missão.");
+        System.out.println("4. Editar Nível de Dificuldade.");
+        System.out.println("5. Editar Status da missão.");
+        System.out.println("6. Editar Habilidade Especial (Caso o ninja seja um Uchiha).");
+        System.out.println("Digite sua opção: ");
+        int opcao = xaxa.nextInt();
+        xaxa.nextLine();
+
+        switch (opcao) {
+            case 1:
+                for (int i = 0; i < ninjas.length; i++) {
+                    if (nomeNinja.equalsIgnoreCase(ninjas[i].nome)) {
+                        System.out.println("Digite o Novo Nome:");
+                        ninjas[i].nome = xaxa.nextLine();
+
+                        ninjaEncontrado = true;
+                        System.out.println("==== Ninja Atualizado ====");
+                    }
+                }
+                break;
+            case 2:
+                for (int i = 0; i < ninjas.length; i++) {
+                    if (nomeNinja.equalsIgnoreCase(ninjas[i].nome)) {
+                        System.out.println("Digite a Nova Idade:");
+                        ninjas[i].idade = xaxa.nextInt();
+                        xaxa.nextLine();
+
+                        ninjaEncontrado = true;
+                        System.out.println("==== Ninja Atualizado ====");
+                    }
+                }
+                break;
+            case 3:
+                for (int i = 0; i < ninjas.length; i++) {
+                    if (nomeNinja.equalsIgnoreCase(ninjas[i].nome)) {
+                        System.out.println("Digite a Nova Missão:");
+                        ninjas[i].missao = xaxa.nextLine();
+
+                        ninjaEncontrado = true;
+                        System.out.println("==== Ninja Atualizado ====");
+                    }
+                }
+                break;
+            case 4:
+                for (int i = 0; i < ninjas.length; i++) {
+                    if (nomeNinja.equalsIgnoreCase(ninjas[i].nome)) {
+                        System.out.println("Digite o Novo Nível de Dificuldade:");
+                        ninjas[i].nivelDificuldade = xaxa.nextLine();
+
+                        ninjaEncontrado = true;
+                        System.out.println("==== Ninja Atualizado ====");
+                    }
+                }
+                break;
+            case 5:
+                for (int i = 0; i < ninjas.length; i++) {
+                    if (nomeNinja.equalsIgnoreCase(ninjas[i].nome)) {
+                        System.out.println("Digite o Novo Status da Missão:");
+                        ninjas[i].statusMissao = xaxa.nextLine();
+
+                        ninjaEncontrado = true;
+                        System.out.println("==== Ninja Atualizado ====");
+                    }
+                }
+                break;
+            case 6:
+                for (int i = 0; i < ninjas.length; i++) {
+                    if (nomeNinja.equalsIgnoreCase(ninjas[i].nome)) {
+
+                        if (ninjas[i] instanceof Uchiha) {
+                            System.out.println("Digite a Nova Habilidade Especial:");
+                            ((Uchiha) ninjas[i]).habilidadeEspecial = xaxa.nextLine();
+
+                            ninjaEncontrado = true;
+                            System.out.println("==== Ninja Atualizado ====");
+                        } else {
+                            System.out.println("Esse ninja não é um Uchiha.");
+                            ninjaEncontrado = true;
+                        }
+                    }
+                }
+                break;
+            default:
+                System.out.println("Opção Inválida. Tente Novamente!");
+                break;
+
+        }
+
+        if (!ninjaEncontrado)
+            System.out.println("Ninja não encontrado!");
+
+        return ninjas;
     }
 }
