@@ -1,4 +1,4 @@
-package NivelIntermediario;
+package NivelIntermediario.Interfaces;
 
 public class Hyuga extends Ninja{
     public void ByakuganAtivado() {
