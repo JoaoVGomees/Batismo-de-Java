@@ -17,5 +17,6 @@ public class Main {
         kakashi.idade = 30;
         kakashi.boasVindas();
         kakashi.sharinganAtivado();
+
     }
 }
