@@ -55,4 +55,9 @@ public abstract class Ninja implements EstrategiaDeBatalha{
         }
 
     }
+
+    // Metodo sem Override
+    public void metodoProvisorio() {
+        System.out.println("Teste na classe Ninja!");
+    }
 }

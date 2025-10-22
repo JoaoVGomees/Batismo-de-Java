@@ -34,4 +34,10 @@ public class Uchiha extends Ninja {
         }
 
     }
+
+    // Colocar o @Override é uma convenção Java
+    // E quando existe um erro de digitação, o @Override da erro e fala que não existe a classe errada no Pai.
+    public void metodoProvisorio() {
+        System.out.println("Teste na classe Uchiha!");
+    }
 }
